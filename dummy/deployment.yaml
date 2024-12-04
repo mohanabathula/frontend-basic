@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-dummy
+spec:
+  selector:
+    matchLabels:
+      app: frontend-dummy
+  template:
+    metadata:
+      labels:
+        app: frontend-dummy
+    spec:
+      containers:
+        - name: frontend-dummy
+          image: mohanabathula/dummy_pod:v1
+          ports:
+            - containerPort: 5001
+            
